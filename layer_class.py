@@ -1,5 +1,4 @@
 import numpy as np
-
 class Layer_Dense:
     def __init__(self, num_inputs, num_neurons):
         self.num_inputs = num_inputs
