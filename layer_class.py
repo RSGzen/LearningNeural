@@ -1,5 +1,6 @@
 import numpy as np
-class Layer_Dense:
+from backpropagation import Backpropagation
+class Layer_Dense(Backpropagation):
     def __init__(self, num_inputs, num_neurons):
         self.num_inputs = num_inputs
         self.num_neurons = num_neurons
@@ -10,5 +11,5 @@ class Layer_Dense:
     def forward_pass(self, input):
         self.output = input @ self.weights + self.biases
 
-    def backpropagation(self):
+    def backPropagation(self):
         pass
