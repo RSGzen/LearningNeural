@@ -20,7 +20,8 @@ class Activation_Function(ReLU, Softmax):
             return result
 
         elif choice == "Softmax":
-            pass
+            result = Softmax.softmax_derivative()
+            return result
 
         else:
             print("\nTypo. Wrong backwards activation function choice selection.")
