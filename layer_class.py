@@ -1,7 +1,7 @@
 import numpy as np
 from activation_function.activation_func_class import Activation_Function
 from backpropagation import Backpropagation
-class Layer_Dense(Backpropagation, ):
+class Layer_Dense():
     def __init__(self, num_inputs, num_neurons):
         self.num_inputs = num_inputs
         self.num_neurons = num_neurons
@@ -15,11 +15,11 @@ class Layer_Dense(Backpropagation, ):
     def forward_pass_output(self, input, activation_func):
         temp_activation = Activation_Function()
         if activation_func == "Relu":
-            result = temp_activation.forward_feed("Relu")
+            result = temp_activation.forward_feed("Relu", input)
             return result
 
         elif activation_func == "Softmax":
-            result = temp_activation.forward_feed("Softmax")
+            result = temp_activation.forward_feed("Softmax", input)
             return result
         
         else:
