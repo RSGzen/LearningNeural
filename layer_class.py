@@ -1,5 +1,7 @@
 import numpy as np
-class Layer_Dense:
+from activation_function.activation_func_class import Activation_Function
+from backpropagation import Backpropagation
+class Layer_Dense(Backpropagation, ):
     def __init__(self, num_inputs, num_neurons):
         self.num_inputs = num_inputs
         self.num_neurons = num_neurons
@@ -7,8 +9,18 @@ class Layer_Dense:
         self.biases = np.zeros((1, num_neurons))
         self.output = None
 
-    def forward_pass(self, input):
+    def forward_pass_net(self, input):
         self.output = input @ self.weights + self.biases
+    
+    def forward_pass_output(self, input, activation_func):
+        temp_activation = Activation_Function()
+        if activation_func == "Relu":
+            result = temp_activation.forward_feed("Relu")
+            return result
 
-    def backpropagation(self):
-        pass
+        elif activation_func == "Softmax":
+            result = temp_activation.forward_feed("Softmax")
+            return result
+        
+        else:
+            print("\nTypo. Wrong activation function selection.")

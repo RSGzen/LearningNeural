@@ -1,6 +1,7 @@
 import numpy as np
 from layer_class import Layer_Dense
 from image_dataset_class import Dataset
+from activation_function.activation_func_class import Activation_Function
 
 def test():
     inputs = [[1.0, 2.0, 3.0, 2.5],
